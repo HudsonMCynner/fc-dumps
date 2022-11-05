@@ -1,9 +1,145 @@
-# 
+# diff all
 
+# version
+# Betaflight / STM32F7X2 (S7X2) 4.3.1 Jul 13 2022 / 03:36:10 (8d4f005) MSP API: 1.44
+# config: manufacturer_id: MTKS, board_name: MATEKF722SE, version: edcd244b, date: 2022-06-29T02:24:46Z
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name MATEKF722SE
+manufacturer_id MTKS
+mcu_id 003b002f3056500f20383447
+signature 
+
+# resources
+resource SDCARD_CS 1 NONE
+resource FLASH_CS 1 D02
+
+# feature
+feature -RX_PARALLEL_PWM
+
+# serial
+serial 0 8192 115200 57600 0 115200
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# aux
+aux 0 0 0 1800 2100 0 0
+aux 1 1 1 1300 1700 0 0
+aux 2 2 1 1700 2100 0 0
+aux 3 13 3 1300 1700 0 0
+aux 4 35 3 1700 2100 0 0
+
+# vtxtable
+vtxtable bands 5
+vtxtable channels 8
+vtxtable band 1 BOSCAM_A A CUSTOM  5865 5845 5825 5805 5785 5765 5745 5725
+vtxtable band 2 BOSCAM_B B CUSTOM  5733 5752 5771 5790 5809 5825 5847 5866
+vtxtable band 3 BOSCAM_E E CUSTOM  5705 5685 5665 5665 5885 5905 5905 5905
+vtxtable band 4 FATSHARK F CUSTOM  5740 5760 5780 5800 5820 5840 5860 5880
+vtxtable band 5 RACEBAND R CUSTOM  5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable powerlevels 4
+vtxtable powervalues 25 100 200 350
+vtxtable powerlabels 25 100 200 350
+
+# master
+set dyn_notch_count = 1
+set dyn_notch_q = 500
+set acc_calibration = -83,0,-7,1
+set serialrx_provider = CRSF
+set blackbox_sample_rate = 1/16
+set blackbox_device = NONE
+set dshot_idle_value = 150
+set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT300
+set motor_output_reordering = 3,2,1,0,4,5,6,7
+set align_board_yaw = 180
+set bat_capacity = 1500
+set ibata_scale = 200
+set small_angle = 180
+set gps_provider = UBLOX
+set gps_sbas_mode = AUTO
+set gps_set_home_point_once = ON
+set gps_rescue_initial_alt = 70
+set gps_rescue_descent_dist = 100
+set gps_rescue_min_sats = 5
+set gps_rescue_min_dth = 50
+set gps_rescue_allow_arming_without_fix = ON
+set pid_process_denom = 2
+set sdcard_mode = OFF
+set osd_warn_link_quality = ON
+set osd_cap_alarm = 1500
+set osd_alt_alarm = 120
+set osd_tim1 = 2561
+set osd_vbat_pos = 6242
+set osd_rssi_pos = 6228
+set osd_link_quality_pos = 6231
+set osd_tim_1_pos = 6551
+set osd_flymode_pos = 6265
+set osd_vtx_channel_pos = 6529
+set osd_crosshairs_pos = 6349
+set osd_ah_pos = 6222
+set osd_mah_drawn_pos = 6211
+set osd_gps_speed_pos = 377
+set osd_gps_sats_pos = 57
+set osd_home_dir_pos = 358
+set osd_home_dist_pos = 353
+set osd_compass_bar_pos = 6187
+set osd_altitude_pos = 6295
+set osd_warnings_pos = 6537
+set osd_avg_cell_voltage_pos = 6274
+set osd_disarmed_pos = 6442
+set osd_stick_overlay_left_pos = 4322
+set osd_stick_overlay_right_pos = 4341
+set vtx_band = 1
+set vtx_channel = 1
+set vtx_power = 1
+set vtx_low_power_disarm = UNTIL_FIRST_ARM
+set vtx_freq = 5865
+set vcd_video_system = PAL
+set flash_spi_bus = 3
+set gyro_1_align_pitch = 1800
+set gyro_1_align_yaw = 1800
+set gyro_2_sensor_align = DEFAULT
+set gyro_2_align_pitch = 1800
+set gyro_2_align_yaw = 1800
+
+profile 0
+
+profile 1
+
+profile 2
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
 # dump
 
 # version
-# Betaflight / STM32F7X2 (S7X2) 4.3.0 Jun 14 2022 / 00:50:37 (229ac66) MSP API: 1.44
+# Betaflight / STM32F7X2 (S7X2) 4.3.1 Jul 13 2022 / 03:36:10 (8d4f005) MSP API: 1.44
 # config: manufacturer_id: MTKS, board_name: MATEKF722SE, version: edcd244b, date: 2022-06-29T02:24:46Z
 
 # start the command batch
@@ -254,10 +390,10 @@ feature ANTI_GRAVITY
 
 # serial
 serial 20 1 115200 57600 0 115200
-serial 0 0 115200 57600 0 115200
+serial 0 8192 115200 57600 0 115200
 serial 1 64 115200 57600 0 115200
-serial 2 8192 115200 57600 0 115200
-serial 3 16384 115200 57600 0 115200
+serial 2 0 115200 57600 0 115200
+serial 3 0 115200 57600 0 115200
 serial 5 0 115200 57600 0 115200
 
 # mixer
@@ -307,8 +443,8 @@ beeper CAM_CONNECTION_CLOSE
 beeper RC_SMOOTHING_INIT_FAIL
 
 # beacon
-beacon -RX_LOST
-beacon -RX_SET
+beacon RX_LOST
+beacon RX_SET
 
 # map
 map AETR1234
@@ -416,14 +552,14 @@ mode_color 6 10 0
 mode_color 7 0 3
 
 # aux
-aux 0 0 0 1700 2100 0 0
+aux 0 0 0 1800 2100 0 0
 aux 1 1 1 1300 1700 0 0
 aux 2 2 1 1700 2100 0 0
-aux 3 13 4 1300 1700 0 0
-aux 4 33 5 1200 2100 0 0
-aux 5 34 5 1800 2100 0 0
-aux 6 35 4 1700 2100 0 0
-aux 7 36 2 1700 2100 0 0
+aux 3 13 3 1300 1700 0 0
+aux 4 35 3 1700 2100 0 0
+aux 5 0 0 900 900 0 0
+aux 6 0 0 900 900 0 0
+aux 7 0 0 900 900 0 0
 aux 8 0 0 900 900 0 0
 aux 9 0 0 900 900 0 0
 aux 10 0 0 900 900 0 0
@@ -479,13 +615,13 @@ rxrange 3 1000 2000
 vtxtable bands 5
 vtxtable channels 8
 vtxtable band 1 BOSCAM_A A CUSTOM  5865 5845 5825 5805 5785 5765 5745 5725
-vtxtable band 2 BOSCAM_B B CUSTOM  5733 5752 5771 5790 5809 5828 5847 5866
-vtxtable band 3 BOSCAM_E E CUSTOM  5705 5685 5665 5645 5885 5905 5925 5945
+vtxtable band 2 BOSCAM_B B CUSTOM  5733 5752 5771 5790 5809 5825 5847 5866
+vtxtable band 3 BOSCAM_E E CUSTOM  5705 5685 5665 5665 5885 5905 5905 5905
 vtxtable band 4 FATSHARK F CUSTOM  5740 5760 5780 5800 5820 5840 5860 5880
 vtxtable band 5 RACEBAND R CUSTOM  5658 5695 5732 5769 5806 5843 5880 5917
-vtxtable powerlevels 3
-vtxtable powervalues 25 200 500
-vtxtable powerlabels 25 200 500
+vtxtable powerlevels 4
+vtxtable powervalues 25 100 200 350
+vtxtable powerlabels 25 100 200 350
 
 # vtx
 vtx 0 0 0 0 0 900 900
@@ -548,7 +684,7 @@ set acc_hardware = AUTO
 set acc_lpf_hz = 10
 set acc_trim_pitch = 0
 set acc_trim_roll = 0
-set acc_calibration = 82,10,-50,1
+set acc_calibration = -83,0,-7,1
 set align_mag = DEFAULT
 set mag_align_roll = 0
 set mag_align_pitch = 0
@@ -607,8 +743,8 @@ set adc_vrefint_calibration = 0
 set adc_tempsensor_calibration30 = 0
 set adc_tempsensor_calibration110 = 0
 set input_filtering_mode = OFF
-set blackbox_sample_rate = 1/4
-set blackbox_device = SPIFLASH
+set blackbox_sample_rate = 1/16
+set blackbox_device = NONE
 set blackbox_disable_pids = OFF
 set blackbox_disable_rc = OFF
 set blackbox_disable_setpoint = OFF
@@ -631,7 +767,7 @@ set dshot_bidir = ON
 set dshot_bitbang = AUTO
 set dshot_bitbang_timer = AUTO
 set use_unsynced_pwm = OFF
-set motor_pwm_protocol = DSHOT600
+set motor_pwm_protocol = DSHOT300
 set motor_pwm_rate = 480
 set motor_pwm_inversion = OFF
 set motor_poles = 14
@@ -648,9 +784,9 @@ set failsafe_recovery_delay = 10
 set failsafe_stick_threshold = 30
 set align_board_roll = 0
 set align_board_pitch = 0
-set align_board_yaw = 0
+set align_board_yaw = 180
 set gimbal_mode = NORMAL
-set bat_capacity = 0
+set bat_capacity = 1500
 set vbat_max_cell_voltage = 430
 set vbat_full_cell_voltage = 410
 set vbat_min_cell_voltage = 330
@@ -672,7 +808,7 @@ set vbat_duration_for_critical = 0
 set vbat_scale = 110
 set vbat_divider = 10
 set vbat_multiplier = 1
-set ibata_scale = 179
+set ibata_scale = 200
 set ibata_offset = 0
 set ibatv_scale = 0
 set ibatv_offset = 0
@@ -704,15 +840,15 @@ set small_angle = 180
 set auto_disarm_delay = 5
 set gyro_cal_on_first_arm = OFF
 set gps_provider = UBLOX
-set gps_sbas_mode = NONE
+set gps_sbas_mode = AUTO
 set gps_sbas_integrity = OFF
 set gps_auto_config = ON
 set gps_auto_baud = OFF
-set gps_ublox_use_galileo = ON
+set gps_ublox_use_galileo = OFF
 set gps_ublox_mode = AIRBORNE
 set gps_set_home_point_once = ON
 set gps_use_3d_speed = OFF
-set gps_rescue_angle = 35
+set gps_rescue_angle = 32
 set gps_rescue_alt_buffer = 15
 set gps_rescue_initial_alt = 70
 set gps_rescue_descent_dist = 100
@@ -732,7 +868,7 @@ set gps_rescue_ascend_rate = 500
 set gps_rescue_descend_rate = 150
 set gps_rescue_throttle_hover = 1280
 set gps_rescue_sanity_checks = RESCUE_SANITY_ON
-set gps_rescue_min_sats = 6
+set gps_rescue_min_sats = 5
 set gps_rescue_min_dth = 50
 set gps_rescue_allow_arming_without_fix = ON
 set gps_rescue_alt_mode = MAX_ALT
@@ -790,7 +926,7 @@ set ledstrip_beacon_percent = 50
 set ledstrip_beacon_armed_only = OFF
 set ledstrip_brightness = 100
 set sdcard_detect_inverted = OFF
-set sdcard_mode = SPI
+set sdcard_mode = OFF
 set sdcard_spi_bus = 3
 set sdio_clk_bypass = OFF
 set sdio_use_cache = OFF
@@ -810,7 +946,7 @@ set osd_warn_launch_control = ON
 set osd_warn_no_gps_rescue = ON
 set osd_warn_gps_rescue_disabled = ON
 set osd_warn_rssi = OFF
-set osd_warn_link_quality = OFF
+set osd_warn_link_quality = ON
 set osd_warn_rssi_dbm = OFF
 set osd_warn_over_cap = OFF
 set osd_rssi_alarm = 20
@@ -830,24 +966,24 @@ set osd_logo_on_arming = OFF
 set osd_logo_on_arming_duration = 5
 set osd_tim1 = 2561
 set osd_tim2 = 2561
-set osd_vbat_pos = 2146
-set osd_rssi_pos = 234
-set osd_link_quality_pos = 2135
+set osd_vbat_pos = 6242
+set osd_rssi_pos = 6228
+set osd_link_quality_pos = 6231
 set osd_link_tx_power_pos = 234
 set osd_rssi_dbm_pos = 234
-set osd_tim_1_pos = 2455
+set osd_tim_1_pos = 6551
 set osd_tim_2_pos = 234
 set osd_remaining_time_estimate_pos = 234
-set osd_flymode_pos = 2169
+set osd_flymode_pos = 6265
 set osd_anti_gravity_pos = 234
 set osd_g_force_pos = 234
 set osd_throttle_pos = 234
-set osd_vtx_channel_pos = 2433
-set osd_crosshairs_pos = 2253
+set osd_vtx_channel_pos = 6529
+set osd_crosshairs_pos = 6349
 set osd_ah_sbar_pos = 206
-set osd_ah_pos = 2126
+set osd_ah_pos = 6222
 set osd_current_pos = 234
-set osd_mah_drawn_pos = 2114
+set osd_mah_drawn_pos = 6211
 set osd_motor_diag_pos = 234
 set osd_craft_name_pos = 234
 set osd_display_name_pos = 234
@@ -855,23 +991,23 @@ set osd_gps_speed_pos = 377
 set osd_gps_lon_pos = 234
 set osd_gps_lat_pos = 234
 set osd_gps_sats_pos = 57
-set osd_home_dir_pos = 45
+set osd_home_dir_pos = 358
 set osd_home_dist_pos = 353
 set osd_flight_dist_pos = 234
-set osd_compass_bar_pos = 2154
-set osd_altitude_pos = 2199
+set osd_compass_bar_pos = 6187
+set osd_altitude_pos = 6295
 set osd_pid_roll_pos = 234
 set osd_pid_pitch_pos = 234
 set osd_pid_yaw_pos = 234
 set osd_debug_pos = 234
 set osd_power_pos = 234
 set osd_pidrate_profile_pos = 234
-set osd_warnings_pos = 14729
-set osd_avg_cell_voltage_pos = 2178
+set osd_warnings_pos = 6537
+set osd_avg_cell_voltage_pos = 6274
 set osd_pit_ang_pos = 234
 set osd_rol_ang_pos = 234
 set osd_battery_usage_pos = 234
-set osd_disarmed_pos = 2346
+set osd_disarmed_pos = 6442
 set osd_nheading_pos = 234
 set osd_up_down_reference_pos = 205
 set osd_nvario_pos = 234
@@ -883,8 +1019,8 @@ set osd_adjustment_range_pos = 234
 set osd_flip_arrow_pos = 234
 set osd_core_temp_pos = 234
 set osd_log_status_pos = 234
-set osd_stick_overlay_left_pos = 234
-set osd_stick_overlay_right_pos = 234
+set osd_stick_overlay_left_pos = 4322
+set osd_stick_overlay_right_pos = 4341
 set osd_stick_overlay_radio_mode = 2
 set osd_rate_profile_name_pos = 234
 set osd_pid_profile_name_pos = 234
@@ -937,13 +1073,13 @@ set pwr_on_arm_grace = 5
 set enable_stick_arming = OFF
 set vtx_band = 1
 set vtx_channel = 1
-set vtx_power = 2
-set vtx_low_power_disarm = OFF
+set vtx_power = 1
+set vtx_low_power_disarm = UNTIL_FIRST_ARM
 set vtx_softserial_alt = OFF
 set vtx_freq = 5865
 set vtx_pit_mode_freq = 0
 set vtx_halfduplex = ON
-set vcd_video_system = AUTO
+set vcd_video_system = PAL
 set vcd_h_offset = 0
 set vcd_v_offset = 0
 set max7456_clock = NOMINAL
