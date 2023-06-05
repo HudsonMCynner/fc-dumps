@@ -1,9 +1,7 @@
-# 
-
 # diff all
 
 # version
-# Betaflight / STM32F7X2 (S7X2) 4.3.2 Nov 28 2022 / 07:30:19 (60c9521) MSP API: 1.44
+# Betaflight / STM32F7X2 (S7X2) 4.4.0 Feb 15 2023 / 21:03:23 (4605309d8) MSP API: 1.45
 
 # config: YES
 
@@ -20,55 +18,23 @@ signature
 
 # resources
 resource SDCARD_CS 1 NONE
-resource FLASH_CS 1 D02
 
 # feature
-feature -RX_PARALLEL_PWM
 feature -AIRMODE
 feature SOFTSERIAL
 
 # serial
 serial 0 8192 115200 57600 0 115200
-
-# beeper
-beeper -GYRO_CALIBRATED
-beeper -RX_LOST
-beeper -RX_LOST_LANDING
-beeper -DISARMING
-beeper -ARMING
-beeper -ARMING_GPS_FIX
-beeper -BAT_CRIT_LOW
-beeper -BAT_LOW
-beeper -GPS_STATUS
-beeper -RX_SET
-beeper -ACC_CALIBRATION
-beeper -ACC_CALIBRATION_FAIL
-beeper -READY_BEEP
-beeper -DISARM_REPEAT
-beeper -ARMED
-beeper -SYSTEM_INIT
-beeper -ON_USB
-beeper -BLACKBOX_ERASE
-beeper -CRASH_FLIP
-beeper -CAM_CONNECTION_OPEN
-beeper -CAM_CONNECTION_CLOSE
-beeper -RC_SMOOTHING_INIT_FAIL
-
-# beacon
-beacon RX_SET
+serial 2 16384 115200 57600 0 115200
 
 # aux
 aux 0 0 0 1700 2100 0 0
-aux 1 2 1 1200 2100 0 0
-aux 2 13 3 1300 1700 0 0
-aux 3 28 4 1700 2100 0 0
-aux 4 35 3 1700 2100 0 0
-
-# rxrange
-rxrange 0 989 2012
-rxrange 1 989 2012
-rxrange 2 989 2012
-rxrange 3 989 2012
+aux 1 1 1 1300 1700 0 0
+aux 2 2 1 1700 2100 0 0
+aux 3 13 3 1300 1700 0 0
+aux 4 28 4 1600 2100 0 0
+aux 5 35 3 1700 2100 0 0
+aux 6 36 0 1200 2100 0 0
 
 # vtxtable
 vtxtable bands 5
@@ -82,64 +48,50 @@ vtxtable powerlevels 4
 vtxtable powervalues 25 100 200 350
 vtxtable powerlabels 25 100 200 350
 
-# rxfail
-rxfail 7 h
-
 # master
-set acc_calibration = -100,-1,-128,1
-set min_check = 1010
-set max_check = 1990
-set serialrx_provider = CRSF
-set rx_spi_protocol = EXPRESSLRS
-set blackbox_sample_rate = 1/8
+set acc_calibration = -95,17,-98,1
+set min_check = 1005
+set max_check = 2000
+set blackbox_sample_rate = 1/16
 set blackbox_device = NONE
 set dshot_bidir = ON
 set motor_pwm_protocol = DSHOT600
 set motor_output_reordering = 3,2,1,0,4,5,6,7
 set align_board_yaw = 180
 set bat_capacity = 1500
-set vbat_max_cell_voltage = 425
-set vbat_min_cell_voltage = 315
-set vbat_warning_cell_voltage = 330
 set ibata_scale = 180
 set small_angle = 180
-set sdcard_mode = OFF
 set osd_cap_alarm = 1500
 set osd_alt_alarm = 120
-set osd_logo_on_arming = ON
 set osd_tim1 = 2561
 set osd_vbat_pos = 14370
-set osd_rssi_pos = 165
-set osd_link_quality_pos = 14423
-set osd_link_tx_power_pos = 97
-set osd_rssi_dbm_pos = 2104
+set osd_link_quality_pos = 14391
 set osd_tim_1_pos = 407
-set osd_flymode_pos = 14457
-set osd_vtx_channel_pos = 6529
+set osd_flymode_pos = 14721
+set osd_vtx_channel_pos = 30810
 set osd_crosshairs_pos = 6349
 set osd_ah_pos = 6222
-set osd_current_pos = 10337
 set osd_mah_drawn_pos = 66
 set osd_gps_speed_pos = 377
 set osd_gps_sats_pos = 57
 set osd_home_dir_pos = 45
 set osd_home_dist_pos = 353
-set osd_compass_bar_pos = 43
-set osd_altitude_pos = 2455
-set osd_power_pos = 68
+set osd_compass_bar_pos = 2091
+set osd_altitude_pos = 2423
+set osd_power_pos = 10307
 set osd_warnings_pos = 14729
-set osd_avg_cell_voltage_pos = 2114
-set osd_battery_usage_pos = 49250
-set osd_disarmed_pos = 6379
+set osd_avg_cell_voltage_pos = 130
+set osd_disarmed_pos = 6549
 set osd_stick_overlay_left_pos = 4325
 set osd_stick_overlay_right_pos = 4338
-set debug_mode = GYRO_SCALED
-set vtx_band = 5
-set vtx_channel = 7
+set osd_sys_bitrate_pos = 237
+set osd_canvas_width = 30
+set osd_canvas_height = 16
+set vtx_band = 1
+set vtx_channel = 1
 set vtx_power = 3
-set vtx_freq = 5880
-set vcd_video_system = NTSC
-set flash_spi_bus = 3
+set vtx_freq = 5865
+set vcd_video_system = PAL
 set gyro_1_align_pitch = 1800
 set gyro_1_align_yaw = 1800
 set gyro_2_sensor_align = DEFAULT
@@ -153,32 +105,18 @@ profile 1
 
 profile 2
 
+profile 3
+
 # restore original profile selection
-profile 0
+profile 2
 
 rateprofile 0
-
-# rateprofile 0
-set rates_type = BETAFLIGHT
-set roll_rc_rate = 100
-set pitch_rc_rate = 100
-set yaw_rc_rate = 100
-set roll_expo = 10
-set pitch_expo = 10
-set yaw_expo = 10
-set roll_srate = 80
-set pitch_srate = 80
-set yaw_srate = 80
 
 rateprofile 1
 
 rateprofile 2
 
 rateprofile 3
-
-rateprofile 4
-
-rateprofile 5
 
 # restore original rateprofile selection
 rateprofile 0
