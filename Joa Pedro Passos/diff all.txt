@@ -1,0 +1,100 @@
+# 
+
+# diff all
+
+# version
+# Betaflight / STM32F405 (S405) 4.3.2 Nov 28 2022 / 07:26:30 (60c9521) MSP API: 1.44
+# config: manufacturer_id: AIRB, board_name: OMNIBUSF4SD, version: bff306ae, date: 2022-11-15T12:36:53Z
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name OMNIBUSF4SD
+manufacturer_id AIRB
+mcu_id 001e00333453500820313748
+signature 
+
+# feature
+feature -RX_PARALLEL_PWM
+feature -AIRMODE
+feature TELEMETRY
+
+# serial
+serial 0 2048 115200 57600 0 115200
+
+# aux
+aux 0 0 0 1600 2100 0 0
+aux 1 2 1 900 1300 0 0
+
+# vtxtable
+vtxtable bands 5
+vtxtable channels 8
+vtxtable band 1 BOSCAM_A A FACTORY 5865 5845 5825 5805 5785 5765 5745 5725
+vtxtable band 2 BOSCAM_B B FACTORY 5733 5752 5771 5790 5809 5828 5847 2866
+vtxtable band 3 BOSCAM_E E FACTORY 5705 5685 5665 5645 5885 5905 5925 5945
+vtxtable band 4 BOSCAM_F F FACTORY 5740 5760 5780 5800 5820 5840 5860 5880
+vtxtable band 5 BOSCAM_R R FACTORY 5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable powerlevels 4
+vtxtable powervalues 25 200 600 800
+vtxtable powerlabels 25 200 600 800
+
+# master
+set acc_calibration = -93,-4,-26,1
+set mag_hardware = NONE
+set baro_hardware = NONE
+set min_check = 1161
+set rssi_channel = 16
+set serialrx_provider = SBUS
+set dshot_idle_value = 150
+set motor_pwm_protocol = DSHOT600
+set bat_capacity = 1500
+set small_angle = 180
+set pid_process_denom = 4
+set osd_rssi_alarm = 35
+set osd_cap_alarm = 1500
+set osd_vbat_pos = 2115
+set osd_rssi_pos = 2137
+set osd_flymode_pos = 2412
+set osd_vtx_channel_pos = 2165
+set osd_crosshairs_pos = 2286
+set osd_ah_pos = 6255
+set osd_power_pos = 130
+set osd_warnings_pos = 14730
+set osd_avg_cell_voltage_pos = 2147
+set osd_battery_usage_pos = 2090
+set vtx_band = 1
+set vtx_channel = 1
+set vtx_power = 3
+set vtx_freq = 5865
+set gyro_1_align_yaw = 2700
+
+profile 0
+
+profile 1
+
+profile 2
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
+# 

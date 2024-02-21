@@ -1,0 +1,101 @@
+# 
+
+# diff all
+
+# version
+# Betaflight / SPEEDYBEEF405V3 (SBF4) 4.3.1 Sep 16 2022 / 04:00:21 (c56d6ec79) MSP API: 1.44
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name SPEEDYBEEF405V3
+mcu_id 003b00363232470233353339
+signature 
+
+# feature
+feature -TELEMETRY
+
+# serial
+serial 0 8192 115200 57600 0 115200
+serial 4 0 115200 57600 0 115200
+
+# aux
+aux 0 0 0 1700 2100 0 0
+aux 1 1 1 1300 1700 0 0
+aux 2 2 1 1700 2100 0 0
+
+# vtxtable
+vtxtable bands 5
+vtxtable channels 7
+vtxtable band 1 BOSCAM_A A CUSTOM  5865 5845 5825 5805 5785 5765 5745
+vtxtable band 2 BOSCAM_B B CUSTOM  5733 5752 5771 5790 5809 5825 5847
+vtxtable band 3 BOSCAM_E E CUSTOM  5705 5685 5665 5665 5885 5905 5905
+vtxtable band 4 FATSHARK F CUSTOM  5740 5760 5780 5800 5820 5840 5860
+vtxtable band 5 RACEBAND R CUSTOM  5658 5695 5732 5769 5806 5843 5880
+vtxtable powerlevels 4
+vtxtable powervalues 25 100 200 350
+vtxtable powerlabels 25 100 200 350
+
+# master
+set acc_calibration = 2,-27,29,1
+set mag_hardware = NONE
+set serialrx_provider = CRSF
+set blackbox_sample_rate = 1/1
+set motor_pwm_protocol = DSHOT300
+set vbat_warning_cell_voltage = 360
+set small_angle = 180
+set deadband = 1
+set yaw_deadband = 3
+set osd_cap_alarm = 1500
+set osd_vbat_pos = 33
+set osd_rssi_pos = 56
+set osd_link_quality_pos = 2081
+set osd_rssi_dbm_pos = 2104
+set osd_flymode_pos = 2553
+set osd_throttle_pos = 224
+set osd_crosshairs_pos = 2317
+set osd_ah_pos = 2190
+set osd_craft_name_pos = 172
+set osd_gps_sats_pos = 65
+set osd_flight_dist_pos = 396
+set osd_altitude_pos = 2093
+set osd_warnings_pos = 2537
+set osd_avg_cell_voltage_pos = 2528
+set osd_battery_usage_pos = 393
+set osd_disarmed_pos = 2507
+set vtx_band = 5
+set vtx_channel = 7
+set vtx_power = 3
+set vtx_freq = 5880
+set vcd_video_system = PAL
+
+profile 0
+
+profile 1
+
+profile 2
+
+# restore original profile selection
+profile 1
+
+rateprofile 0
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
+# 

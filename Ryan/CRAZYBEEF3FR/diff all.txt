@@ -1,0 +1,46 @@
+diff all
+# Betaflight / CRAZYBEEF3FR (CBFR) 4.0.6 Sep  1 2019 / 00:25:52 (2a64051a2) MSP API: 1.41 / FEATURE CUT LEVEL 2
+batch start
+defaults nosave
+mcu_id 003900225933571220333337
+
+feature -TELEMETRY
+aux 0 0 0 1700 2100 0 0
+aux 1 1 1 1300 1700 0 0
+aux 2 2 1 900 1300 0 0
+set acc_trim_pitch = 14
+set acc_trim_roll = 4
+set motor_pwm_protocol = DSHOT600
+set osd_vbat_pos = 2401
+set osd_tim_2_pos = 2497
+set osd_flymode_pos = 2282
+set osd_crosshairs_pos = 2253
+set osd_ah_pos = 2126
+set osd_mah_drawn_pos = 2282
+set osd_warnings_pos = 329
+set osd_disarmed_pos = 2282
+set frsky_spi_tx_id = 66,124
+set frsky_spi_offset = -81
+set frsky_spi_bind_hop_data = 6,118,230,107,219,96,208,85,197,74,186,63,175,52,164,41,153,30,142,19,131,8,120,232,109,221,98,210,87,199,76,188,65,177,54,166,43,155,32,144,21,133,10,122,234,111,223,0,0,0
+profile 0
+
+profile 1
+
+profile 2
+
+profile 0
+rateprofile 0
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+rateprofile 0
+save
+# 

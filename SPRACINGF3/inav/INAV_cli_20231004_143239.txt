@@ -1,0 +1,79 @@
+
+CLI
+
+# diff all
+# INAV/SPRACINGF3 2.6.1 Feb 25 2021 / 11:18:37 (64249b1a)
+# GCC-9.2.1 20191025 (release) [ARM/arm-9-branch revision 277599]
+defaults noreboot
+
+mmix reset
+
+mmix 0  1.000  0.000  0.000  0.000
+mmix 1  1.000  0.000  0.000  0.000
+mmix 2  1.000  0.000  0.000  0.000
+mmix 3  1.000  0.000  0.000  0.000
+feature -BLACKBOX
+feature SOFTSERIAL
+feature TELEMETRY
+feature PWM_OUTPUT_ENABLE
+serial 2 64 115200 115200 0 115200
+aux 0 0 0 1700 2100
+aux 1 1 1 900 1600
+aux 2 3 1 1700 2100
+set looptime = 2000
+set gyro_hardware_lpf = 98HZ
+set gyro_lpf_hz = 110
+set gyro_lpf_type = PT1
+set acc_hardware = MPU6050
+set acczero_x = 737
+set acczero_y = -1302
+set acczero_z = -870
+set accgain_x = 1693
+set accgain_y = 300
+set accgain_z = 300
+set mag_hardware = NONE
+set magzero_x = 59
+set magzero_y = -161
+set magzero_z = -4
+set maggain_x = 0
+set maggain_y = 0
+set maggain_z = 229
+set baro_hardware = MS5611
+set receiver_type = SERIAL
+set serialrx_provider = CRSF
+set motor_pwm_rate = 50
+set motor_pwm_protocol = STANDARD
+set throttle_idle =  7.000
+set model_preview_type = 3
+set applied_defaults = 2
+set nav_mc_hover_thr = 1200
+set tz_offset = -4
+profile 1
+
+set mc_p_pitch = 44
+set mc_i_pitch = 75
+set mc_d_pitch = 25
+set mc_i_roll = 60
+set mc_p_yaw = 35
+set mc_i_yaw = 80
+set dterm_lpf_hz = 110
+set dterm_lpf_type = PT1
+set dterm_lpf2_hz = 170
+set dterm_lpf2_type = PT1
+set tpa_rate = 20
+set tpa_breakpoint = 1200
+set yaw_rate = 60
+profile 2
+
+profile 3
+
+battery_profile 1
+
+battery_profile 2
+
+battery_profile 3
+
+profile 1
+battery_profile 2
+
+# 

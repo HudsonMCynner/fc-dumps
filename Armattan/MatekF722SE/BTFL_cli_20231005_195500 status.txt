@@ -1,0 +1,19 @@
+# 
+
+# status
+MCU F722 Clock=216MHz, Vref=3.26V, Core temp=45degC
+Stack size: 2048, Stack address: 0x20010000
+Configuration: CONFIGURED, size: 3656, max available: 16384
+Devices detected: SPI:2, I2C:1
+Gyros detected: gyro 1, gyro 2 locked dma shared
+GYRO=MPU6000, ACC=MPU6000, BARO=BMP280
+OSD: MAX7456 (30 x 13)
+BUILD KEY: f4f9cba7af5a8381bb05659d722d953d (4.4.2)
+System Uptime: 12 seconds, Current Time: 2023-10-05T23:54:45.034+00:00
+CPU:25%, cycle time: 124, GYRO rate: 8064, RX rate: 15, System rate: 9
+Voltage: 2 * 0.01V (0S battery - NOT PRESENT)
+I2C Errors: 0
+SD card: Startup failed
+Arming disable flags: RXLOSS CLI MSP MOTOR_PROTO
+
+# 

@@ -3,7 +3,7 @@
 # diff all
 
 # version
-# Betaflight / STM32F7X2 (S7X2) 4.4.2 Jun  1 2023 / 05:08:48 (23d066d08) MSP API: 1.45
+# Betaflight / STM32F7X2 (S7X2) 4.4.3 Nov 16 2023 / 11:22:53 (738127e7e) MSP API: 1.45
 
 # config: YES
 
@@ -24,9 +24,11 @@ resource SDCARD_CS 1 NONE
 # feature
 feature -AIRMODE
 feature SOFTSERIAL
+feature GPS
 
 # serial
 serial 0 8192 115200 57600 0 115200
+serial 3 2 115200 57600 0 115200
 
 # beeper
 beeper -GYRO_CALIBRATED
@@ -54,10 +56,11 @@ beeper -RC_SMOOTHING_INIT_FAIL
 
 # aux
 aux 0 0 0 1700 2100 0 0
-aux 1 2 1 1200 2100 0 0
-aux 2 13 3 1300 1700 0 0
-aux 3 28 4 1700 2100 0 0
-aux 4 35 3 1700 2100 0 0
+aux 1 1 1 1300 1600 0 0
+aux 2 46 1 1700 2100 0 0
+aux 3 13 3 1300 1700 0 0
+aux 4 28 4 1700 2100 0 0
+aux 5 35 3 1700 2100 0 0
 
 # rxrange
 rxrange 0 989 2012
@@ -77,8 +80,13 @@ vtxtable powerlevels 4
 vtxtable powervalues 25 100 200 350
 vtxtable powerlabels 25 100 200 350
 
+# rxfail
+rxfail 3 s 1350
+rxfail 5 s 1500
+
 # master
-set acc_calibration = -105,-2,-48,1
+set gyro_to_use = SECOND
+set acc_calibration = -6,6,-6,1
 set min_check = 1010
 set max_check = 1990
 set blackbox_sample_rate = 1/8
@@ -86,6 +94,7 @@ set blackbox_device = NONE
 set dshot_bidir = ON
 set motor_pwm_protocol = DSHOT600
 set motor_output_reordering = 3,2,1,0,4,5,6,7
+set failsafe_procedure = GPS-RESCUE
 set align_board_yaw = 180
 set bat_capacity = 1500
 set vbat_max_cell_voltage = 425
@@ -93,6 +102,16 @@ set vbat_min_cell_voltage = 315
 set vbat_warning_cell_voltage = 330
 set ibata_scale = 180
 set small_angle = 180
+set gps_sbas_mode = AUTO
+set gps_set_home_point_once = ON
+set gps_rescue_ascend_rate = 500
+set gps_rescue_return_alt = 20
+set gps_rescue_ground_speed = 500
+set gps_rescue_max_angle = 60
+set gps_rescue_descend_rate = 100
+set gps_rescue_throttle_hover = 1350
+set gps_rescue_min_sats = 6
+set pid_process_denom = 2
 set sdcard_mode = OFF
 set osd_cap_alarm = 1500
 set osd_alt_alarm = 120
@@ -101,29 +120,33 @@ set osd_tim1 = 2561
 set osd_vbat_pos = 14370
 set osd_rssi_pos = 165
 set osd_link_quality_pos = 14423
-set osd_link_tx_power_pos = 97
+set osd_link_tx_power_pos = 129
 set osd_rssi_dbm_pos = 2104
 set osd_tim_1_pos = 407
 set osd_flymode_pos = 14457
 set osd_vtx_channel_pos = 6529
 set osd_crosshairs_pos = 6349
 set osd_ah_pos = 6222
-set osd_current_pos = 10305
+set osd_current_pos = 8289
 set osd_mah_drawn_pos = 66
-set osd_gps_speed_pos = 377
-set osd_gps_sats_pos = 57
-set osd_home_dir_pos = 45
-set osd_home_dist_pos = 353
+set osd_gps_speed_pos = 2369
+set osd_gps_lat_pos = 16713
+set osd_gps_sats_pos = 2093
+set osd_home_dir_pos = 2092
+set osd_home_dist_pos = 2401
+set osd_flight_dist_pos = 2337
 set osd_compass_bar_pos = 43
 set osd_altitude_pos = 2455
 set osd_power_pos = 68
 set osd_warnings_pos = 14729
-set osd_avg_cell_voltage_pos = 2088
+set osd_avg_cell_voltage_pos = 2114
 set osd_battery_usage_pos = 49250
 set osd_disarmed_pos = 6379
+set osd_flip_arrow_pos = 43
 set osd_stick_overlay_left_pos = 4325
 set osd_stick_overlay_right_pos = 4338
-set osd_canvas_width = 30
+set osd_total_flights_pos = 225
+set osd_gps_sats_show_hdop = ON
 set osd_canvas_height = 13
 set debug_mode = GYRO_SCALED
 set vtx_band = 5
@@ -133,9 +156,7 @@ set vtx_freq = 5880
 set vcd_video_system = NTSC
 set gyro_1_align_pitch = 1800
 set gyro_1_align_yaw = 1800
-set gyro_2_sensor_align = DEFAULT
-set gyro_2_align_pitch = 1800
-set gyro_2_align_yaw = 1800
+set gyro_2_align_yaw = 900
 set rpm_filter_harmonics = 0
 
 profile 0
@@ -147,7 +168,7 @@ profile 2
 profile 3
 
 # restore original profile selection
-profile 1
+profile 0
 
 rateprofile 0
 

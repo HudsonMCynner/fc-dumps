@@ -1,0 +1,46 @@
+Labels:
+  "Favorites":
+  "DRONE":
+  "SIMULADOR":
+  "mjx":
+Sort: 1
+Models:
+  model19.yml:
+    hash: "375200002158a29c"
+    name: "ARMATHAN"
+    mod0id: 1
+    mod1type: 5
+    labels: "DRONE"
+    bitmap: "Splash.png"
+    lastopen: 1704113009
+  model24.yml:
+    hash: "e62f000023588d46"
+    name: "SIMULADOR"
+    mod0id: 1
+    labels: "SIMULADOR"
+    bitmap: "liftoff.png"
+    lastopen: 1704271946
+  model11.yml:
+    hash: "7c1200009256094e"
+    name: "ACCURC"
+    labels: "SIMULADOR"
+    bitmap: "download.jpg"
+    lastopen: 0
+  model20.yml:
+    hash: "ad33000023587446"
+    name: "GEELANG ANGER"
+    mod0type: 6
+    mod0rf: 14
+    labels: "DRONE"
+    bitmap: "download.jpg"
+    lastopen: 1704190094
+  model25.yml:
+    hash: "535200009c577b95"
+    name: "CINELOG25"
+    mod0id: 1
+    mod1id: 2
+    mod1type: 5
+    labels: "DRONE"
+    bitmap: "Splash.png"
+    lastopen: 1703782460
+

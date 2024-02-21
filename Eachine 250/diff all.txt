@@ -1,0 +1,57 @@
+# 
+
+# diff all
+# Betaflight / SPRACINGF3 (SRF3) 4.0.6 Sep  1 2019 / 01:05:57 (2a64051a2) MSP API: 1.41 / FEATURE CUT LEVEL 6
+batch start
+defaults nosave
+mcu_id 002300305233571420343839
+resource LED 1 B10
+
+feature -AIRMODE
+feature SOFTSERIAL
+feature LED_STRIP
+aux 0 0 0 1700 2100 0 0
+aux 1 1 1 1500 2100 0 0
+rxrange 0 1110 1926
+rxrange 1 1110 1926
+rxrange 2 1110 1926
+rxrange 3 1110 1926
+set gyro_sync_denom = 2
+set acc_calibration = 22,31,131
+set mag_hardware = NONE
+set min_throttle = 1030
+set use_unsynced_pwm = ON
+set motor_pwm_rate = 2000
+set align_board_yaw = 90
+set small_angle = 180
+set deadband = 5
+set yaw_deadband = 5
+profile 0
+
+set p_pitch = 50
+set i_pitch = 30
+set p_roll = 50
+set i_roll = 25
+set p_yaw = 45
+set i_yaw = 40
+set f_yaw = 90
+profile 1
+
+profile 2
+
+profile 0
+rateprofile 0
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+rateprofile 1
+save
+# 

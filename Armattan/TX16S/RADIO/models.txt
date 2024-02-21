@@ -1,0 +1,5 @@
+[TEMPLATES]
+model19.bin
+model20.bin
+[HELICOPTERS]
+[AIRCRAFT]

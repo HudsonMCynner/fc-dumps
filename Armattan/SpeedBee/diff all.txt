@@ -1,0 +1,51 @@
+# 
+
+# diff all
+
+# version
+# Betaflight / SPEEDYBEEF405V3 (SBF4) 4.3.2 Apr  7 2023 / 03:15:27 (f156481e9) MSP API: 1.44
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name SPEEDYBEEF405V3
+mcu_id 002a003c3033470736323334
+signature 
+
+# aux
+aux 0 13 255 900 900 0 0
+
+# master
+set acc_calibration = -2,7,39,1
+set blackbox_device = NONE
+
+profile 0
+
+profile 1
+
+profile 2
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
+# 

@@ -1,0 +1,3 @@
+0.81 Fixes
+-----------------------------
+* [BW] Memory management and stability

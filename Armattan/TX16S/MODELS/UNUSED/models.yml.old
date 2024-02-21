@@ -1,0 +1,11 @@
+- "TEMPLATES":
+- "HELICOPTERS":
+  - filename: "model11.yml"
+    name: "MODEL11"
+- "DRONE":
+  - filename: "model19.yml"
+    name: "ARMATHAN"
+  - filename: "model24.yml"
+    name: "SIMULADOR"
+  - filename: "model28.yml"
+    name: ""

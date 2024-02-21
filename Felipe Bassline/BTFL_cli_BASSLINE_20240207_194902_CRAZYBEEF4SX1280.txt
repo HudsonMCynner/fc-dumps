@@ -1,0 +1,186 @@
+# 
+
+# diff all
+
+# version
+# Betaflight / STM32F411 (S411) 4.4.2 Jun  1 2023 / 04:12:25 (23d066d08) MSP API: 1.45
+
+# config: YES
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name CRAZYBEEF4SX1280
+manufacturer_id HAMO
+mcu_id 0040006d4831500820393153
+signature 
+
+# name: Bassline
+
+# feature
+feature -RX_SERIAL
+feature -SOFTSERIAL
+feature -TELEMETRY
+feature RX_SPI
+
+# serial
+serial 1 2048 115200 57600 0 115200
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# map
+map TAER1234
+
+# aux
+aux 0 0 0 1800 2100 0 0
+aux 1 1 1 900 1200 0 0
+aux 2 35 2 1800 2100 0 0
+
+# adjrange
+adjrange 0 0 1 900 1200 12 1 0 0
+adjrange 1 0 1 1200 1800 12 1 0 0
+adjrange 2 0 1 1800 2100 12 1 0 0
+
+# vtxtable
+vtxtable bands 6
+vtxtable channels 8
+vtxtable band 1 BOSCAM_A A FACTORY 5865 5845 5825 5805 5785 5765 5745 5725
+vtxtable band 2 BOSCAM_B B FACTORY 5733 5752 5771 5790 5809 5828 5847 5866
+vtxtable band 3 BOSCAM_E E FACTORY 5705 5685 5665    0 5885 5905    0    0
+vtxtable band 4 FATSHARK F FACTORY 5740 5760 5780 5800 5820 5840 5860 5880
+vtxtable band 5 RACEBAND R FACTORY 5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable band 6 LOWRACE  L FACTORY 5333 5373 5413 5453 5493 5533 5573 5613
+vtxtable powerlevels 5
+vtxtable powervalues 10 2 14 20 26
+vtxtable powerlabels 0 RCE 25 100 400
+
+# master
+set gyro_lpf1_static_hz = 0
+set dyn_notch_min_hz = 150
+set acc_lpf_hz = 10
+set acc_trim_roll = -2
+set acc_calibration = 13,-81,8,1
+set serialrx_provider = SPEK1024
+set dshot_idle_value = 1200
+set dshot_bitbang = AUTO
+set motor_pwm_protocol = DSHOT300
+set motor_poles = 12
+set align_board_yaw = 90
+set vbat_max_cell_voltage = 445
+set vbat_min_cell_voltage = 290
+set vbat_warning_cell_voltage = 310
+set ibata_scale = 470
+set yaw_motors_reversed = ON
+set small_angle = 180
+set gps_rescue_ascend_rate = 500
+set gps_rescue_ground_speed = 2000
+set gps_rescue_descent_dist = 200
+set gps_rescue_landing_alt = 5
+set gps_rescue_throttle_max = 1600
+set gps_rescue_throttle_hover = 1280
+set gps_rescue_sanity_checks = RESCUE_SANITY_ON
+set gps_rescue_min_sats = 5
+set gps_rescue_throttle_p = 150
+set gps_rescue_throttle_i = 20
+set gps_rescue_throttle_d = 50
+set gps_rescue_velocity_p = 80
+set gps_rescue_velocity_i = 20
+set gps_rescue_velocity_d = 15
+set gps_rescue_yaw_p = 40
+set deadband = 1
+set yaw_deadband = 1
+set osd_rssi_pos = 314
+set osd_link_quality_pos = 2390
+set osd_rssi_dbm_pos = 2360
+set osd_tim_2_pos = 2433
+set osd_flymode_pos = 2457
+set osd_throttle_pos = 2425
+set osd_vtx_channel_pos = 2081
+set osd_current_pos = 2336
+set osd_mah_drawn_pos = 2368
+set osd_craft_name_pos = 2442
+set osd_gps_speed_pos = 65
+set osd_gps_lon_pos = 33
+set osd_gps_lat_pos = 49
+set osd_gps_sats_pos = 88
+set osd_home_dir_pos = 79
+set osd_home_dist_pos = 364
+set osd_warnings_pos = 2345
+set osd_avg_cell_voltage_pos = 2401
+set osd_disarmed_pos = 2314
+set osd_esc_rpm_pos = 161
+set osd_core_temp_pos = 2104
+set osd_canvas_width = 30
+set osd_canvas_height = 13
+set debug_mode = RX_EXPRESSLRS_SPI
+set vtx_band = 5
+set vtx_channel = 8
+set vtx_power = 5
+set vtx_low_power_disarm = ON
+set vtx_freq = 5917
+set gyro_1_sensor_align = CW0
+set gyro_1_align_yaw = 0
+set expresslrs_uid = 225,192,213,177,83,239
+set expresslrs_switch_mode = HYBRID
+set craft_name = Bassline
+
+profile 0
+
+# profile 0
+set dterm_lpf1_static_hz = 0
+set vbat_sag_compensation = 100
+set iterm_relax_cutoff = 20
+set yaw_lowpass_hz = 0
+set i_pitch = 96
+set d_pitch = 45
+set i_roll = 92
+set d_roll = 44
+set i_yaw = 92
+set d_min_roll = 33
+set d_min_pitch = 33
+set d_max_advance = 0
+set feedforward_jitter_factor = 5
+set feedforward_boost = 18
+set feedforward_max_rate_limit = 95
+set simplified_i_gain = 115
+set simplified_d_gain = 110
+set simplified_pitch_d_gain = 90
+set tpa_breakpoint = 1250
+
+profile 1
+
+profile 2
+
+profile 3
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+rateprofile 1
+
+rateprofile 2
+
+# rateprofile 2
+set rates_type = BETAFLIGHT
+set roll_rc_rate = 110
+set pitch_rc_rate = 110
+set yaw_rc_rate = 100
+set roll_srate = 75
+set pitch_srate = 75
+set yaw_srate = 70
+
+rateprofile 3
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
+# 

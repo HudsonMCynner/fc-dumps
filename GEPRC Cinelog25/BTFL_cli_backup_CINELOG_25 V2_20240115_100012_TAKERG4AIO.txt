@@ -1,0 +1,288 @@
+# diff all defaults
+
+# version
+# Betaflight / STM32G47X (SG47) 4.5.0 Aug  5 2023 / 11:50:53 (b396ab44f) MSP API: 1.46
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name TAKERG4AIO
+manufacturer_id GEPR
+mcu_id 003a002d5246501520333536
+signature 
+
+# name: CineLog 25 v2
+#feature -GPS
+#feature -TELEMETRY
+#feature -OSD
+
+# feature
+feature -AIRMODE
+feature GPS
+feature TELEMETRY
+feature OSD
+#feature AIRMODE
+
+# serial
+#serial 0 0 115200 57600 0 115200
+serial 0 8192 115200 57600 0 115200
+#serial 3 0 115200 57600 0 115200
+serial 3 64 115200 57600 0 115200
+#serial 40 0 115200 57600 0 115200
+serial 40 2 115200 115200 0 115200
+#beeper ON_USB
+
+# beeper
+beeper -ON_USB
+#beacon -RX_LOST
+
+# beacon
+beacon RX_LOST
+#beacon -RX_SET
+beacon RX_SET
+
+# aux
+#aux 0 0 0 900 900 0 0
+aux 0 0 0 1700 2100 0 0
+#aux 1 0 0 900 900 0 0
+aux 1 1 6 1200 2100 0 0
+#aux 2 0 0 900 900 0 0
+aux 2 46 1 1700 2100 0 0
+#aux 3 0 0 900 900 0 0
+aux 3 13 3 1700 2100 0 0
+#aux 4 0 0 900 900 0 0
+aux 4 28 4 1700 2100 0 0
+
+# vtxtable
+#vtxtable bands 0
+vtxtable bands 6
+#vtxtable channels 0
+vtxtable channels 8
+#vtxtable band 1 BAND1    1 CUSTOM 
+vtxtable band 1 BOSCAM_A A CUSTOM  5865 5845 5825 5805 5785 5765 5745 5725
+#vtxtable band 2 BAND2    2 CUSTOM 
+vtxtable band 2 BOSCAM_B B CUSTOM  5733 5752 5771 5790 5809 5828 5847 5866
+#vtxtable band 3 BAND3    3 CUSTOM 
+vtxtable band 3 BOSCAM_E E CUSTOM  5705 5685 5665 5665 5885 5905 5905 5905
+#vtxtable band 4 BAND4    4 CUSTOM 
+vtxtable band 4 FATSHARK F CUSTOM  5740 5760 5780 5800 5820 5840 5860 5880
+#vtxtable band 5 BAND5    5 CUSTOM 
+vtxtable band 5 RACEBAND R CUSTOM  5658 5695 5732 5769 5806 5843 5880 5917
+#vtxtable band 6 BAND6    6 CUSTOM 
+vtxtable band 6 LOWRACE  L CUSTOM  5362 5399 5436 5473 5510 5547 5584 5621
+#vtxtable powerlevels 0
+vtxtable powerlevels 4
+#vtxtable powervalues 0 0 0 0 0 0 0 0
+vtxtable powervalues 25 200 500 1000
+#vtxtable powerlabels LV0 LV1 LV2 LV3 LV4 LV5 LV6 LV7
+vtxtable powerlabels 25 200 500 MAX
+
+# master
+#set gyro_lpf1_type = PT1
+set gyro_lpf1_type = PT2
+#set gyro_lpf2_static_hz = 500
+set gyro_lpf2_static_hz = 0
+#set dyn_notch_count = 3
+set dyn_notch_count = 4
+#set gyro_lpf1_dyn_min_hz = 250
+set gyro_lpf1_dyn_min_hz = 0
+#set acc_calibration = 0,0,0,0
+set acc_calibration = 25,38,-44,1
+#set mag_hardware = AUTO
+set mag_hardware = NONE
+#set serialrx_provider = SBUS
+set serialrx_provider = CRSF
+#set dshot_idle_value = 550
+set dshot_idle_value = 650
+#set motor_pwm_protocol = DSHOT600
+set motor_pwm_protocol = DSHOT300
+#set motor_output_reordering = 0,1,2,3,4,5,6,7
+set motor_output_reordering = 2,3,0,1,4,5,6,7
+#set failsafe_delay = 15
+set failsafe_delay = 6
+#set failsafe_switch_mode = STAGE1
+set failsafe_switch_mode = STAGE2
+#set failsafe_procedure = DROP
+set failsafe_procedure = GPS-RESCUE
+#set failsafe_recovery_delay = 10
+set failsafe_recovery_delay = 5
+#set align_board_yaw = 45
+set align_board_yaw = 0
+#set vbat_max_cell_voltage = 430
+set vbat_max_cell_voltage = 435
+#set vbat_warning_cell_voltage = 350
+set vbat_warning_cell_voltage = 345
+#set beeper_dshot_beacon_tone = 1
+set beeper_dshot_beacon_tone = 2
+#set gps_sbas_mode = NONE
+set gps_sbas_mode = AUTO
+#set gps_ublox_use_galileo = OFF
+set gps_ublox_use_galileo = ON
+#set gps_set_home_point_once = OFF
+set gps_set_home_point_once = ON
+#set gps_rescue_min_sats = 8
+set gps_rescue_min_sats = 6
+#set gps_rescue_allow_arming_without_fix = OFF
+set gps_rescue_allow_arming_without_fix = ON
+#set deadband = 0
+set deadband = 2
+#set yaw_deadband = 0
+set yaw_deadband = 2
+#set osd_vbat_pos = 234
+set osd_vbat_pos = 2082
+#set osd_rssi_pos = 234
+set osd_rssi_pos = 2135
+#set osd_link_quality_pos = 234
+set osd_link_quality_pos = 2103
+#set osd_tim_2_pos = 234
+set osd_tim_2_pos = 2454
+#set osd_flymode_pos = 234
+set osd_flymode_pos = 2465
+#set osd_throttle_pos = 234
+set osd_throttle_pos = 77
+#set osd_crosshairs_pos = 205
+set osd_crosshairs_pos = 2317
+#set osd_craft_name_pos = 234
+set osd_craft_name_pos = 2536
+#set osd_gps_sats_pos = 234
+set osd_gps_sats_pos = 2093
+#set osd_home_dir_pos = 234
+set osd_home_dir_pos = 2092
+#set osd_home_dist_pos = 234
+set osd_home_dist_pos = 2401
+#set osd_altitude_pos = 234
+set osd_altitude_pos = 2433
+#set osd_warnings_pos = 14665
+set osd_warnings_pos = 14761
+#set osd_avg_cell_voltage_pos = 234
+set osd_avg_cell_voltage_pos = 2114
+#set osd_battery_usage_pos = 234
+set osd_battery_usage_pos = 97
+#set osd_camera_frame_pos = 35
+set osd_camera_frame_pos = 99
+#set osd_gps_sats_show_hdop = OFF
+set osd_gps_sats_show_hdop = ON
+#set osd_canvas_width = 53
+set osd_canvas_width = 30
+#set osd_canvas_height = 20
+set osd_canvas_height = 16
+#set debug_mode = NONE
+set debug_mode = GYRO_SCALED
+#set vtx_band = 0
+set vtx_band = 2
+#set vtx_channel = 0
+set vtx_channel = 3
+#set vtx_power = 0
+set vtx_power = 2
+#set vtx_freq = 0
+set vtx_freq = 5771
+#set vcd_video_system = AUTO
+set vcd_video_system = PAL
+#set displayport_msp_fonts = 0,0,0,0
+set displayport_msp_fonts = 0,1,2,3
+#set gyro_1_sensor_align = CW270
+set gyro_1_sensor_align = CW180FLIP
+#set gyro_1_align_pitch = 0
+set gyro_1_align_pitch = 1800
+#set gyro_1_align_yaw = 2700
+set gyro_1_align_yaw = 1800
+#set craft_name = -
+set craft_name = CineLog 25 v2
+
+profile 0
+
+# profile 0
+#set dterm_lpf1_dyn_min_hz = 75
+set dterm_lpf1_dyn_min_hz = 67
+#set dterm_lpf1_dyn_max_hz = 150
+set dterm_lpf1_dyn_max_hz = 135
+#set dterm_lpf1_static_hz = 75
+set dterm_lpf1_static_hz = 67
+#set dterm_lpf2_static_hz = 150
+set dterm_lpf2_static_hz = 135
+#set anti_gravity_gain = 80
+set anti_gravity_gain = 120
+#set yaw_lowpass_hz = 100
+set yaw_lowpass_hz = 0
+#set p_pitch = 47
+set p_pitch = 82
+#set i_pitch = 84
+set i_pitch = 95
+#set d_pitch = 46
+set d_pitch = 64
+#set f_pitch = 125
+set f_pitch = 132
+#set p_roll = 45
+set p_roll = 46
+#set i_roll = 80
+set i_roll = 90
+#set d_roll = 40
+set d_roll = 35
+#set f_roll = 120
+set f_roll = 101
+#set p_yaw = 45
+set p_yaw = 70
+#set i_yaw = 80
+set i_yaw = 100
+#set f_yaw = 120
+set f_yaw = 101
+#set angle_p_gain = 50
+set angle_p_gain = 60
+#set angle_limit = 60
+set angle_limit = 55
+#set d_min_roll = 30
+set d_min_roll = 35
+#set d_min_pitch = 34
+set d_min_pitch = 64
+#set feedforward_averaging = OFF
+set feedforward_averaging = 2_POINT
+#set feedforward_smooth_factor = 25
+set feedforward_smooth_factor = 65
+#set simplified_pids_mode = RPY
+set simplified_pids_mode = OFF
+#set simplified_dterm_filter_multiplier = 100
+set simplified_dterm_filter_multiplier = 90
+#set tpa_mode = D
+set tpa_mode = PD
+#set tpa_rate = 65
+set tpa_rate = 50
+
+profile 1
+
+profile 2
+
+profile 3
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+#set roll_rc_rate = 7
+set roll_rc_rate = 5
+#set pitch_rc_rate = 7
+set pitch_rc_rate = 5
+#set yaw_rc_rate = 7
+set yaw_rc_rate = 5
+#set roll_srate = 67
+set roll_srate = 59
+#set pitch_srate = 67
+set pitch_srate = 59
+#set yaw_srate = 67
+set yaw_srate = 64
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
